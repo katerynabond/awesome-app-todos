@@ -42,7 +42,7 @@ const TodoApp = {
     const lis = this.todos
                       .map(todo => `<li>${todo.task}</li>`)
                       .join('');
-    this.todoList.innerHTML = lis;// becarefull can lead to security issues
+    this.todoList.innerHTML = lis;// be carefull can lead to security issues
   //const lis = this.todos.map(function (todo, index){});
   },
 
