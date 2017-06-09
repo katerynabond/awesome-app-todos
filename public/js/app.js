@@ -2,7 +2,7 @@
 
 const TodoApp = {
   rootElement: "#app",
-  todos: [mockTodo],
+  todos: [],
   start: function(){
     this.cacheDOM();
     this.bindEvents();
@@ -10,14 +10,19 @@ const TodoApp = {
   },
   cacheDOM: function(){
     this.root = document.querySelector(this.rootElement);
-    this.addButton = this.root.querySelector('.add-button');
+  //  this.addButton = this.root.querySelector('.add-button');
+    this.createForm = this.root.querySelector('.create-form');
     this.taskInput = this.root.querySelector('.task-input');
     this.todoList = this.root.querySelector('.todo-list');
   },
   bindEvents: function(){
-    this.addButton.addEventListener('click', ()=> this.addToDo());
+    //this is so passe
+  //  this.addButton.addEventListener('click', ()=> this.addToDo());
+  this.createForm.addEventListener('submit', (event) => this.addToDo(event));
+
   },
-  addToDo: function(){
+  addToDo: function(event){
+    event.preventDefault();
     //first: grab the task input value
     const taskValue = this.taskInput.value;
     // first-part-2: validate that taskValue is actually "something"
